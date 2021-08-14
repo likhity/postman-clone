@@ -1,0 +1,85 @@
+:root {
+    --font-size: 1.5rem;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    margin: 0;
+    overflow: hidden;
+    font-size: var(--font-size);
+}
+
+.root {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    width: 900px;
+    height: 100vh;
+}
+
+/* Form Styles */
+.form {
+    position: relative;
+    top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+}
+
+.form > * {
+    margin: 0;
+}
+
+.form::before {
+    position: absolute;
+    content: "Request-Type";
+    bottom: 2.5rem;
+    font-size: calc(var(--font-size) - 0.5rem);
+}
+
+.request-type-dropdown {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.url-text-field {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.main-button {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    background-color: orangered;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* End Form Styles */
+
+ul.nav {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+.nav li {
+    padding: 0.5rem 1rem;
+}
