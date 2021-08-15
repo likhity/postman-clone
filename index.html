@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Postman Clone</title>
     <script src="script.js" type="module"></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="root">
-        <div class="form">
-            <select class="request-type-dropdown" name="request-type" id="request-type">
-                <option value="GET">GET</option>
-                <option value="POST">POST</option>
-                <option value="PUT">PUT</option>
-                <option value="PATCH">PATCH</option>
-                <option value="DELETE">DELETE</option>
-            </select>
-            <input type="text" class="url-text-field" placeholder="Type URL here..." name="url" id="url">
-            <button class="main-button">Send</button>
-        </div>
-        <ul class="nav">
-            <li>Params</li>
-            <li>Headers</li>
-            <li>Body</li>
-        </ul>
-
+      <div class="form">
+        <select
+          class="request-type-dropdown"
+          name="request-type"
+          id="request-type"
+        >
+          <option value="GET">GET</option>
+          <option value="POST">POST</option>
+          <option value="PUT">PUT</option>
+          <option value="PATCH">PATCH</option>
+          <option value="DELETE">DELETE</option>
+        </select>
+        <input
+          type="text"
+          class="url-text-field"
+          placeholder="Enter request URL"
+          name="url"
+          id="url"
+          autocomplete="off"
+        />
+        <button class="main-button">Send</button>
+      </div>
+      <ul class="nav">
+        <li class="selected">Params</li>
+        <li class="">Headers</li>
+        <li class="">Body</li>
+      </ul>
+      <div class="tabPane params selected"></div>
+      <div class="tabPane headers">headers</div>
+      <div class="tabPane body">body</div>
     </div>
-</body>
+  </body>
 </html>

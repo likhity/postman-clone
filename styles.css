@@ -1,85 +1,145 @@
 :root {
-    --font-size: 1.5rem;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  --font-size: 1.5rem;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --main-color: #f67f3a;
 }
 
+/* General Styles */
 * {
-    box-sizing: border-box;
-    outline: none;
+  box-sizing: border-box;
+  outline: none;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--font-family);
-    margin: 0;
-    overflow: hidden;
-    font-size: var(--font-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  margin: 0;
+  overflow: hidden;
+  font-size: var(--font-size);
 }
 
 .root {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    width: 900px;
-    height: 100vh;
+  /* display: flex;
+  align-items: center;
+  flex-direction: column; */
+  /* border: 1px solid #ccc; */
+  width: 600px;
+  height: 100vh;
 }
+/* END General Styles */
 
 /* Form Styles */
 .form {
-    position: relative;
-    top: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    /* grid-template-columns: 1fr 1fr 1fr; */
+  position: relative;
+  top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* grid-template-columns: 1fr 1fr 1fr; */
 }
 
 .form > * {
-    margin: 0;
+  margin: 0;
+}
+
+.form > *:hover {
+  background-color: #a35427;
 }
 
 .form::before {
-    position: absolute;
-    content: "Request-Type";
-    bottom: 2.5rem;
-    font-size: calc(var(--font-size) - 0.5rem);
+  position: absolute;
+  content: "Method";
+  bottom: 53px;
+  left: 0;
+  font-size: calc(var(--font-size) - 0.6rem);
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.form::after {
+  position: absolute;
+  content: "URL";
+  bottom: 53px;
+  left: 120px;
+  font-size: calc(var(--font-size) - 0.6rem);
+  color: var(--main-color);
+  font-weight: bold;
 }
 
 .request-type-dropdown {
-    font-size: var(--font-size);
-    font-family: var(--font-family);
-    padding: 0.5rem;
-    cursor: pointer;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-right: 2px solid white;
 }
 
 .url-text-field {
-    font-size: var(--font-size);
-    font-family: var(--font-family);
-    padding: 0.5rem;
-    width: 100%;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  border-right: 2px solid white;
+}
+
+.url-text-field::placeholder {
+  color: #e6c6b8;
 }
 
 .main-button {
-    font-size: var(--font-size);
-    font-family: var(--font-family);
-    background-color: orangered;
-    border: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
-/* End Form Styles */
+/* END Form Styles */
 
-ul.nav {
-    list-style-type: none;
-    display: flex;
-    padding: 0;
+/* Tabs Styles */
+.nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  margin-top: 40px;
 }
 
 .nav li {
-    padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.nav li.selected {
+  border-top: 3px solid var(--main-color);
+}
+
+.nav li:not(.selected) {
+  background-color: rgb(231, 231, 231);
+  color: #aaa;
+  border-top: 3px solid white;
+}
+
+.nav li:not(.selected):hover {
+  border-top: 3px solid var(--main-color);
+}
+
+.tabPane:not(.selected) {
+  display: none;
 }
