@@ -16,7 +16,6 @@ body {
   align-items: center;
   font-family: var(--font-family);
   margin: 0;
-  overflow: hidden;
   font-size: var(--font-size);
 }
 
@@ -27,8 +26,35 @@ body {
   /* border: 1px solid #ccc; */
   width: 600px;
   height: 100vh;
+  position: relative;
+}
+
+a {
+  color: rgb(0, 174, 255);
+  text-decoration: none;
+  border-bottom: 1px solid rgb(0, 174, 255);
+  font-size: 1rem;
+}
+a:hover {
+  color: rgb(0, 143, 209);
 }
 /* END General Styles */
+
+/* Title Styles */
+.title {
+  color: var(--main-color);
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 7.5vw;
+  transform: translate(-10%, -50%);
+}
+
+.title p,
+.title h1 {
+  margin: 0;
+}
+/* END Title Styles */
 
 /* Form Styles */
 .form {
@@ -91,7 +117,7 @@ body {
 }
 
 .url-text-field::placeholder {
-  color: #e6c6b8;
+  color: #fbe0d4;
 }
 
 .main-button {
@@ -121,9 +147,13 @@ body {
 .nav li {
   padding: 0.5rem 1rem;
   cursor: pointer;
-  width: 150px;
+  width: 100%;
   text-align: center;
   font-size: 1.25rem;
+}
+
+.nav li:not(:last-child) {
+  margin-right: 3px;
 }
 
 .nav li.selected {
@@ -140,6 +170,109 @@ body {
   border-top: 3px solid var(--main-color);
 }
 
-.tabPane:not(.selected) {
+.tabPane {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.tabPane:not(.selected),
+.tabPane:not(.selected) > * {
   display: none;
+}
+/* END Tabs Styles */
+
+/* Individual Tab Pane Styles */
+/* params */
+.key-value-pair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.key-value-pair > * {
+  width: 200px;
+  font-family: var(--font-family);
+  padding: 0.25rem;
+}
+
+.key-value-pair .key {
+  margin-right: 10px;
+}
+
+.key-value-pair .delete-btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  width: 15px;
+  height: 15px;
+  line-height: 0.3;
+  border: none;
+  background: none;
+  color: gray;
+  border-radius: 20rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.tabPane a {
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
+  font-size: 1rem;
+}
+
+/* headers */
+
+/* body */
+
+.tabPane.body {
+  overflow: unset;
+}
+
+.tabPane.body textarea {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  resize: NONE;
+}
+
+/* END Individual Tab Pane Styles */
+
+/* Response Styles */
+.response {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 330px;
+}
+
+.response .response-textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.response::before {
+  content: "Response";
+  position: relative;
+  bottom: 5px;
+  color: var(--main-color);
+  font-size: 1rem;
+  font-weight: bold;
+}
+/* END Response Styles */
+
+/* Responsive Styles */
+@media (max-width: 1500px) {
+  .title {
+    display: none;
+  }
 }

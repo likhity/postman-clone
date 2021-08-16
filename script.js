@@ -1,41 +1,37 @@
-// import axios from "axios";
+import axios from "axios";
+import jsonFormat from "json-format";
+import {
+  urlTextField,
+  navTabsElements,
+  tabObserver,
+  createKeyValuePair,
+  createKeyValuePairElements,
+  formElement,
+  bodyElement,
+  responseElement,
+  tabPanes,
+  getKeyValuePairData,
+} from "./ui";
 
-const urlTextField = document.querySelector(".url-text-field");
-
-urlTextField.addEventListener("input", (e) => {
-  if (e.target.value) {
-    document.title = urlTextField.value;
-  } else {
-    document.title = "Postman Clone";
-  }
-});
-
-const navTabsElements = document.querySelectorAll(".nav li");
-
-class TabObserver {
-  constructor(tab) {
-    this.tab = tab;
-    this.tabPane = document.querySelector(".tabPane.selected");
-  }
-
-  setTab(tab) {
-    this.tab.classList.remove("selected");
-    tab.classList.add("selected");
-    this.tabPane.classList.remove("selected");
-    const tabPaneToBeSelected = document.querySelector(
-      `.tabPane.${tab.textContent.toLowerCase()}`
-    );
-    tabPaneToBeSelected.classList.add("selected");
-    this.tabPane = tabPaneToBeSelected;
-    this.tab = tab;
-  }
-}
-
-const tabObserver = new TabObserver(navTabsElements[0]);
-
-navTabsElements.forEach((navTabElement) => {
-  navTabElement.addEventListener("click", (e) => {
-    if (navTabElement.classList.contains("selected")) return;
-    tabObserver.setTab(navTabElement);
-  });
+formElement.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const requestMethod = formElement.method.value;
+  const requestUrl = formElement.url.value;
+  const params = getKeyValuePairData(".tabPane.params");
+  const headers = getKeyValuePairData(".tabPane.headers");
+  headers["Access-Control-Allow-Origin"] = "*";
+  console.log(params, headers);
+  axios({
+    method: requestMethod.toLowerCase(),
+    url: requestUrl,
+    headers,
+    params,
+    data: bodyElement.value && JSON.parse(bodyElement.value),
+  })
+    .then(({ data }) => {
+      responseElement.value = jsonFormat(data, { type: "space", size: 2 });
+    })
+    .catch((error) => {
+      responseElement.value = `Error. \n${error}`;
+    });
 });
