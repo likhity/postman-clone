@@ -17,4 +17,4 @@ npm i
 npm start
 ```
 
-Click on the link that the parcel bundler provides in the terminal and that should open up the application in the browser.
+Click on the link that the parcel bundler provides in the terminal (usually <a href="http://localhost:1234">localhost:1234</a>) and that should open up the application in the browser.
