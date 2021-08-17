@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "json-format": "^1.0.1",
-    "monaco-editor": "^0.27.0"
+    "json-format": "^1.0.1"
   }
 }
