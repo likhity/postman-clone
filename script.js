@@ -28,8 +28,18 @@ formElement.addEventListener("submit", (e) => {
     params,
     data: bodyElement.value && JSON.parse(bodyElement.value),
   })
-    .then(({ data }) => {
-      responseElement.value = jsonFormat(data, { type: "space", size: 2 });
+    .then((result) => {
+      const { data } = result;
+      if (data) {
+        if (typeof data === "object") {
+          responseElement.value = jsonFormat(data, { type: "space", size: 2 });
+        } else {
+          responseElement.value = data;
+        }
+      } else {
+        responseElement.value = `No response was recieved. Response status code: ${result.status}`;
+      }
+      console.log(result);
     })
     .catch((error) => {
       responseElement.value = `Error. \n${error}`;
