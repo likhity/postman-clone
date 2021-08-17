@@ -8,7 +8,7 @@ You can use tab to indent in the body textarea, but that part is still kind of j
 
 ## How to Use
 
-To use the application, go to <a href="https://likhit.github.io/webdev/postman-clone">likhit.github.io/webdev/postman-clone</a>.
+To use the application, go to <a href="https://likhity.github.io/webdev/postman-clone">likhity.github.io/webdev/postman-clone</a>.
 
 If you want to use it your computer with all the code downloaded, run the following commands.
 
