@@ -1,15 +1,9 @@
 import axios from "axios";
 import jsonFormat from "json-format";
 import {
-  urlTextField,
-  navTabsElements,
-  tabObserver,
-  createKeyValuePair,
-  createKeyValuePairElements,
   formElement,
   bodyElement,
   responseElement,
-  tabPanes,
   getKeyValuePairData,
 } from "./ui";
 
