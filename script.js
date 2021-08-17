@@ -20,7 +20,6 @@ formElement.addEventListener("submit", (e) => {
   const params = getKeyValuePairData(".tabPane.params");
   const headers = getKeyValuePairData(".tabPane.headers");
   headers["Access-Control-Allow-Origin"] = "*";
-  console.log(params, headers);
   axios({
     method: requestMethod.toLowerCase(),
     url: requestUrl,
@@ -37,7 +36,7 @@ formElement.addEventListener("submit", (e) => {
           responseElement.value = data;
         }
       } else {
-        responseElement.value = `No response was recieved. Response status code: ${result.status}`;
+        responseElement.value = `No response was recieved. Response status code: ${result.status}. More details were logged to the console.`;
       }
       console.log(result);
     })
