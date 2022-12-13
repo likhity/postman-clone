@@ -8,7 +8,7 @@ You can use tab to indent in the body textarea, but that part is still kind of j
 
 ## How to Use
 
-To use the application, go to <a href="https://likhity.github.io/webdev/postman-clone">likhity.github.io/webdev/postman-clone</a>.
+To use the application, go to [likhity.github.io/webdev/postman-clone](https://likhity.github.io/webdev/postman-clone).
 
 If you want to use it your computer with all the code downloaded, run the following commands.
 
@@ -19,4 +19,4 @@ npm i
 npm start
 ```
 
-Click on the link that the parcel bundler provides in the terminal (usually <a href="http://localhost:1234">localhost:1234</a>) and that should open up the application in the browser.
+Click on the link that the parcel bundler provides in the terminal (usually [localhost:1234](http://localhost:1234)) and that should open up the application in the browser.
